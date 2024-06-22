@@ -95,8 +95,7 @@ function PlayState:update(dt)
             -- Award points
             self.score = self.score + 1
             sounds['score']:play()
-
-            -- You may add any additional effects or behavior here
+    
         end
     end
 
@@ -104,7 +103,7 @@ function PlayState:update(dt)
     -- Spawn bulbs
     self.timer4 = self.timer4 + dt
     if self.timer4 > 8 then
-        table.insert(self.bulb_list, Bulb())  -- Insert it into the bulb_list
+        table.insert(self.bulb_list, Bulb()) 
         self.timer4 = 0
     end
 
@@ -128,7 +127,6 @@ function PlayState:update(dt)
             self.score = self.score + 5
             sounds['score']:play()
 
-            -- You may add any additional effects or behavior here
         end
     end
 
