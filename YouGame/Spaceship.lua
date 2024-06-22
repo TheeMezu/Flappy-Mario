@@ -48,9 +48,9 @@ end
 
 
 function Spaceship:update(dt)
-    local acceleration = 100  -- Adjust acceleration value as needed
-    local friction = 80  -- Adjust friction value as needed
-    local gravity = 50 -- Adjust gravity value as needed
+    local acceleration = 100  -- Adjust acceleration value 
+    local friction = 80  -- Adjust friction value 
+    local gravity = 50 -- Adjust gravity value 
 
     -- Apply acceleration based on keyboard input
     if love.keyboard.isDown('left') then
@@ -61,8 +61,8 @@ function Spaceship:update(dt)
         self.facingleft = false
     elseif love.keyboard.isDown('down') then
         self.dy = acceleration 
-    elseif love.keyboard.isDown('space') then -- 'space', not 'spacebar'
-        self.dy = - 100 -- Adjust jump strength as needed
+    elseif love.keyboard.isDown('space') then 
+        self.dy = - 100 -- Adjust jump strength 
         sounds['jump']:play()
     else
         -- Apply friction when not pressing any movement keys
@@ -78,10 +78,9 @@ function Spaceship:update(dt)
 
     -- Update position based on velocity
     self.x = self.x + self.dx * dt
-    self.y = self.y + self.dy * dt -- Update y position based on vertical velocity
+    self.y = self.y + self.dy * dt 
 
-    -- Optionally, you can add boundaries to keep the spaceship within the screen
-    -- Adjust as needed based on the screen width (VIRTUAL_WIDTH) and height (VIRTUAL_HEIGHT)
+    -- Adjust based on the screen width (VIRTUAL_WIDTH) and height (VIRTUAL_HEIGHT)
     self.x = math.max(0, math.min(self.x, VIRTUAL_WIDTH - self.width))
     self.y = math.max(0, math.min(self.y, VIRTUAL_HEIGHT - self.height * 1.7))
 end
