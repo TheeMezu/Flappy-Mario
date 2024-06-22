@@ -7,12 +7,12 @@ function StateMachine:init(states)
 		enter = function() end,
 		exit = function() end
 	}
-	self.states = states or {} -- [name] -> [function that returns states]
+	self.states = states or {} 
 	self.current = self.empty
 end
 
 function StateMachine:change(stateName, enterParams)
-	assert(self.states[stateName]) -- state must exist!
+	assert(self.states[stateName])
 	self.current:exit()
 	self.current = self.states[stateName]()
 	self.current:enter(enterParams)
